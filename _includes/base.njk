@@ -7,6 +7,17 @@
   <title>{{ title }}</title>
 </head>
 <body>
+  <header>
+    <h1>{{ ghost.settings.title }}</h1>
+    <p>{{ ghost.settings.description }}</p>
+    <ul>
+    {% for item in ghost.settings.navigation %}
+      <li>
+        <a href="{{ item.url }}">{{ item.label }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  </header>  
   <main>
     {{ content | safe }}
   </main>
