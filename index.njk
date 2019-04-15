@@ -1,0 +1,47 @@
+---
+layout: base.njk
+---
+
+<h2>Posts</h2>
+<ul>
+{% for post in ghost.posts %}
+  <li>
+    <h3>
+      <a href="/posts/{{ post.slug }}/">{{ post.title }}</a>
+    </h3>
+    {% if post.custom_excerpt %}
+      <p>{{ post.custom_excerpt }}</p>
+    {% else %}
+      <p>{{ post.excerpt }}</p>
+    {% endif %}
+    {% if post.authors %}
+      <div>{% if post.authors.length > 1 %}Authors:{% else %}Author:{% endif %}</div>
+      <ul>
+      {% for author in post.authors %}
+        <li>{{ author.name }}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>Author: {{ post.primary_author.name }}</p>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+
+<h2>Pages</h2>
+<ul>
+{% for page in ghost.pages %}
+  <li>
+    <a href="/{{ page.slug }}/">{{ page.title }}</a>
+  </li>
+{% endfor %}
+</ul>
+
+<h2>Tags</h2>
+<ul>
+{% for tag in ghost.tags %}
+  <li>
+    <a href="/tag/{{ tag.slug }}/">{{ tag.name }}</a>
+  </li>
+{% endfor %}
+</ul>
