@@ -21,16 +21,23 @@ async function fetchSettings(){
   const settings = api.settings.browse();
   return settings;
 }
+
+async function fetchTags(){
+  const tags = api.tags.browse({include:'count.posts'});
+  return tags;
+}
    
 module.exports = async function(){
 
     let posts = await fetchPosts();
     let pages = await fetchPages();
     let settings = await fetchSettings();
+    let tags = await fetchTags();
 
     return {
       'posts': posts,
       'pages': pages,
-      'settings': settings
+      'settings': settings,
+      'tags': tags
      };
 };

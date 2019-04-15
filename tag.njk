@@ -1,0 +1,25 @@
+---
+layout: base.njk
+pagination:
+  data: ghost.tags
+  alias: tag
+  size: 1
+permalink: /tag/{{ tag.slug }}/
+---
+<h1>{{ tag.name }}</h1>
+{% if tag.description %}
+  <p>{{ tag.description }}</p>
+{% else %}
+  <p>A collection of {{ tag.count.posts }} posts</p>
+{% endif %}
+<ul>
+{% for post in ghost.posts %}
+  {% for item in post.tags %}
+    {% if item.name == tag.name %}
+      <li>
+        <a href="/posts/{{post.slug}}">{{ post.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+</ul>
