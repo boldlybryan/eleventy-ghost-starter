@@ -29,8 +29,8 @@ module.exports = async function(){
     let settings = await fetchSettings();
 
     return {
-      'pages': pages,
       'posts': posts,
+      'pages': pages,
       'settings': settings
      };
 };
