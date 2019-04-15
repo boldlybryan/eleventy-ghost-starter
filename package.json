@@ -1,0 +1,30 @@
+{
+  "name": "eleventy-ghost-starter",
+  "version": "0.1.0",
+  "description": "A starter template for creating a static site with Eleventy and the Ghost API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brykng/eleventy-ghost-starter.git"
+  },
+  "keywords": [
+    "Eleventy",
+    "Ghost",
+    "JAMstack",
+    "static",
+    "site"
+  ],
+  "author": "Bryan King",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brykng/eleventy-ghost-starter/issues"
+  },
+  "homepage": "https://github.com/brykng/eleventy-ghost-starter#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.2",
+    "@tryghost/content-api": "^1.2.1"
+  }
+}
