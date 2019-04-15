@@ -1,0 +1,10 @@
+---
+layout: base
+pagination:
+  data: ghost.posts
+  alias: post
+  size: 1
+permalink: /posts/{{post.slug}}/
+---
+<h1>{{ post.title }}</h1>
+{{ post.html | safe }}
