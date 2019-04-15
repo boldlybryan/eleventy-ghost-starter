@@ -1,0 +1,10 @@
+---
+layout: base
+pagination:
+  data: ghost.pages
+  alias:  item
+  size: 1
+permalink: /{{item.slug}}/
+---
+<h1>{{ item.title }}</h1>
+{{ item.html | safe }}
