@@ -26,6 +26,11 @@ async function fetchTags(){
   const tags = api.tags.browse({include:'count.posts'});
   return tags;
 }
+
+async function fetchAuthors(){
+  const authors = api.authors.browse({include:'count.posts'});
+  return authors;
+}
    
 module.exports = async function(){
 
@@ -33,11 +38,13 @@ module.exports = async function(){
     let pages = await fetchPages();
     let settings = await fetchSettings();
     let tags = await fetchTags();
+    let authors = await fetchAuthors();
 
     return {
       'posts': posts,
       'pages': pages,
       'settings': settings,
-      'tags': tags
+      'tags': tags,
+      'authors': authors
      };
 };

@@ -1,0 +1,30 @@
+---
+layout: base.njk
+pagination:
+  data: ghost.authors
+  alias: author
+  size: 1
+permalink: /author/{{ author.slug }}/
+---
+<img src="{{ author.profile_image }}" alt="">
+<h1>{{ author.name }}</h1>
+{% if author.bio %}
+  <p>{{ author.bio }}</p>
+{% else %}
+  <p>{{ author.name }} has written {{ author.count.posts }} posts</p>
+{% endif %}
+<p>{{ author.location }}</p>
+<p><a href="{{ author.website }}">{{ author.website }}</a></p>
+
+<h2>They've written {{ author.count.posts }} posts</h2>
+<ul>
+{% for post in ghost.posts %}
+  {% for item in post.authors %}
+    {% if item.name == author.name %}
+      <li>
+        <a href="/posts/{{post.slug}}">{{ post.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+</ul>

@@ -15,16 +15,14 @@ layout: base.njk
     {% else %}
       <p>{{ post.excerpt }}</p>
     {% endif %}
-    {% if post.authors %}
-      <div>{% if post.authors.length > 1 %}Authors:{% else %}Author:{% endif %}</div>
-      <ul>
-      {% for author in post.authors %}
-        <li>{{ author.name }}</li>
-      {% endfor %}
-      </ul>
-    {% else %}
-      <p>Author: {{ post.primary_author.name }}</p>
-    {% endif %}
+    <p>Written by:</p>
+    <ul>
+    {% for author in post.authors %}
+      <li>
+        <a href="/author/{{ author.slug }}/">{{ author.name }}</a>
+      </li>
+    {% endfor %}
+    </ul>
   </li>
 {% endfor %}
 </ul>
