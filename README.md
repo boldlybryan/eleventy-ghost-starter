@@ -1,4 +1,4 @@
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/brykng/eleventy-ghost-starter.git)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/brykng/eleventy-ghost-starter)
 
 This starter template has two main dependencies:
 1. Eleventy
