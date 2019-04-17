@@ -8,6 +8,7 @@ permalink: /posts/{{ post.slug }}/
 ---
 <h1>{{ post.title }}</h1>
 <p>{{ post.published_at | displayDate }}</p>
+<p>Reading time: {{ post.html | readingTime }}</p>
 {{ post.html | safe }}
 <h2>Tags:</h2>
 <ul>

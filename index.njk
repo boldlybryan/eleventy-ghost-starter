@@ -10,6 +10,7 @@ layout: base.njk
       <a href="/posts/{{ post.slug }}/">{{ post.title }}</a>
     </h3>
     <p>posted on {{ post.published_at | displayDate }}</p>
+    <p>Reading time: {{ post.html | readingTime }}</p>
     {% if post.custom_excerpt %}
       <p>{{ post.custom_excerpt }}</p>
     {% else %}

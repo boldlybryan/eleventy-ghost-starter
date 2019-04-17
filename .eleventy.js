@@ -1,3 +1,5 @@
+const readingTime = require('eleventy-plugin-reading-time');
+
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("displayDate", function(date) {
@@ -27,5 +29,7 @@ module.exports = function(eleventyConfig) {
     let d = new Date(date);
     return `${month[d.getMonth()]} ${d.getDate()}${(ordinal[d.getDate()] || "th")}, ${d.getUTCFullYear()}`;
   });
+
+  eleventyConfig.addPlugin(readingTime);  
 
 };

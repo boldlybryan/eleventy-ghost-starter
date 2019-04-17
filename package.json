@@ -25,6 +25,10 @@
   "homepage": "https://github.com/brykng/eleventy-ghost-starter#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.8.2",
-    "@tryghost/content-api": "^1.2.1"
+    "@tryghost/content-api": "^1.2.1",
+    "eleventy-plugin-reading-time": "0.0.1"
+  },
+  "dependencies": {
+    "@tryghost/helpers": "^1.1.2"
   }
 }
